@@ -17,7 +17,7 @@ var jwt = require('jsonwebtoken');
 var misc = require('./misc.js');
 var config = require('./config'); //config file in the app directory which contains the JWT key
 
-process.env.PORT = process.env.PORT || 5000;
+// process.env.PORT = process.env.PORT || 5000;
 
 console.log(process.env.NODE_ENV);
 
@@ -172,6 +172,10 @@ app.use('/api', apiRoutesAdmin);
 
 app.use(express.static(__dirname + '/client'));
 
-app.listen(process.env.PORT, function(){
-  console.log("The magic is happening on port %s", process.env.PORT);
+// app.listen(process.env.PORT, function(){
+//   console.log("The magic is happening on port %s", process.env.PORT);
+// });
+
+app.listen(process.env.PORT || 5000, function(){
+  console.log("The magic is happening on port 5000");
 });
